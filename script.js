@@ -157,7 +157,7 @@ const depositfor = []
 for (const mov of movements)if (mov > 0) depositfor.push(mov)
   console.log(depositfor) 
 
-
+// FILTER METHOD******************************************************************
 const withdrawalfor = []
 
 for(const mov of movements) if(mov < 0) withdrawalfor.push(mov)
@@ -167,3 +167,15 @@ withdrawalfor.filter(function(mov){
   return mov < 0
 })
 console.log(withdrawalfor)
+
+// REDUCE METHOD **************************************************************************************
+
+
+const balance = movements.reduce((acc, curr,)=> acc + curr,0);
+console.log(balance)
+
+let balance2 = 0
+for(const mov of movements){
+balance2 += mov 
+}
+console.log(balance2)
