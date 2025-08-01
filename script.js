@@ -144,6 +144,14 @@ const createUserName = function(accs){
 createUserName(accounts)
 console.log(accounts)
 
+const calcDisplayBalance = function(movements){
+  const balance = movements.reduce((acc,mov)=>acc + mov, 0)
+  labelBalance.textContent = `${balance} EUR` 
+}
+calcDisplayBalance(account1.movements)
+
+
+
 
  const deposits = movements.filter(function(mov){
 return mov > 0
