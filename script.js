@@ -187,3 +187,74 @@ for(const mov of movements){
 balance2 += mov 
 }
 console.log(balance2)
+
+
+
+// MAXIMUM VALUE
+
+
+const max = movements.reduce((acc,mov)=>{
+  if(acc > mov)
+    return acc
+  else
+    return mov
+},movements[0])
+
+
+
+
+// CHALLENGE ******************************************
+
+/* 
+CHALLENGE #2
+Challenge Overview
+This is coding challenge number two. In this challenge, we return to the Julia case study about dogs. 
+The task is to convert the ages of dogs to human ages and then calculate their average age. 
+Your job is to create a function called calcAverageHumanAge that accepts an array of dog ages and performs the following three tasks.
+
+Task 1: Convert Dog Ages to Human Ages
+Calculate the age of all dogs in human years using this formula:
+
+If the dog is less than or equal to two years old, the human age is simply twice the dog's age.
+If the dog is older than two years, the human age is calculated by the formula: 16 + dog’s age × 4
+
+Task 2: Filter Adult Dogs
+Exclude all dogs that are less than 18 human years old. 
+Essentially, keep only the dogs that are at least 18 years old in human years.
+
+Task 3: Calculate Average Human Age
+Calculate the average human age of all the adult dogs. 
+From previous challenges, you should already know how to calculate averages. 
+In this challenge, you will do it differently by using the map, filter, and reduce methods.
+
+Finally, run this function for both provided test data sets. 
+This challenge serves as practice for using the map, filter, and array methods studied earlier.
+*/
+
+// Test data 1:[5,2,4,1,15,8,3]
+// Test data 2:[16,6,10,5,6,1,4]
+
+const DogsAge = [5,2,4,1,15,8,3]
+const  DogsAge2 = [2,4,6,33,2,34,]
+
+
+
+const calcAverageHymanAge = function(DogsAge){
+const humanAge = DogsAge.map(age=>{
+  if(age >2){
+    return 16+age*4
+  }else{
+    return age * 2
+  }
+})
+
+const ExcludeDogsAge = humanAge.filter(Age=> Age >= 18)
+
+
+const AverageDogs = ExcludeDogsAge.reduce((acc, age)=>acc + age,0) / ExcludeDogsAge.length
+return AverageDogs
+}
+console.log(calcAverageHymanAge(DogsAge))
+
+
+
