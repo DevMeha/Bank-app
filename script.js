@@ -256,64 +256,64 @@ return AverageDogs
 }
 console.log(calcAverageHymanAge(DogsAge))
 
-// ====================== NOTATKA O METODACH MAP, FILTER I REDUCE ======================
+// // ====================== NOTATKA O METODACH MAP, FILTER I REDUCE ======================
 
 
-// ****************************** MAP() ********************************
-// - Służy do przekształcania każdego elementu tablicy na coś innego.
-// - Zwraca nową tablicę z przekształconymi elementami.
-// - W Twoim kodzie: zamieniamy wiek psa na odpowiadający wiek człowieka.
+// // ****************************** MAP() ********************************
+// // - Służy do przekształcania każdego elementu tablicy na coś innego.
+// // - Zwraca nową tablicę z przekształconymi elementami.
+// // - W Twoim kodzie: zamieniamy wiek psa na odpowiadający wiek człowieka.
 
-const humanAge = DogsAge.map(age => {
-  if (age > 2) {
-    return 16 + age * 4;  // starsze psy - wzór: 16 + wiek * 4
-  } else {
-    return age * 2;       // młodsze psy - wzór: wiek * 2
-  }
-});
-
-
-// ****************************** FILTER() *****************************
-// - Służy do "filtrowania" tablicy, czyli wybrania tylko tych elementów, które spełniają warunek.
-// - Zwraca nową tablicę z wybranymi elementami.
-// - W Twoim kodzie: wybieramy tylko te ludzkie wieki, które są równe lub większe niż 18.
-
-const ExcludeDogsAge = humanAge.filter(age => age >= 18);
+// const humanAge = DogsAge.map(age => {
+//   if (age > 2) {
+//     return 16 + age * 4;  // starsze psy - wzór: 16 + wiek * 4
+//   } else {
+//     return age * 2;       // młodsze psy - wzór: wiek * 2
+//   }
+// });
 
 
-// ****************************** REDUCE() *****************************
-// - Służy do redukcji tablicy do jednej wartości, np. sumy, średniej, max, min itp.
-// - W Twoim kodzie: sumujemy wszystkie wybrane wieki i dzielimy przez ich liczbę, aby obliczyć średnią.
+// // ****************************** FILTER() *****************************
+// // - Służy do "filtrowania" tablicy, czyli wybrania tylko tych elementów, które spełniają warunek.
+// // - Zwraca nową tablicę z wybranymi elementami.
+// // - W Twoim kodzie: wybieramy tylko te ludzkie wieki, które są równe lub większe niż 18.
 
-const AverageDogs = ExcludeDogsAge.reduce((acc, age) => acc + age, 0) / ExcludeDogsAge.length;
-
-
-// ====================== PEŁNY KOD Z WYJAŚNIENIAMI =====================
-
-const DogsAge = [5, 2, 4, 1, 15, 8, 3];
-
-const calcAverageHumanAge = function(DogsAge) {
-  const humanAge = DogsAge.map(age => {
-    if (age > 2) {
-      return 16 + age * 4;
-    } else {
-      return age * 2;
-    }
-  });
-
-  const ExcludeDogsAge = humanAge.filter(age => age >= 18);
-
-  const AverageDogs = ExcludeDogsAge.reduce((acc, age) => acc + age, 0) / ExcludeDogsAge.length;
-
-  return AverageDogs;
-}
-
-console.log(calcAverageHumanAge(DogsAge));
+// const ExcludeDogsAge = humanAge.filter(age => age >= 18);
 
 
-/*
-PODSUMOWANIE:
-- map:      zmienia tablicę wieków psów na wiek ludzki
-- filter:   wybiera tylko wieki >= 18
-- reduce:   oblicza średnią z wybranych wieków
-*/
+// // ****************************** REDUCE() *****************************
+// // - Służy do redukcji tablicy do jednej wartości, np. sumy, średniej, max, min itp.
+// // - W Twoim kodzie: sumujemy wszystkie wybrane wieki i dzielimy przez ich liczbę, aby obliczyć średnią.
+
+// const AverageDogs = ExcludeDogsAge.reduce((acc, age) => acc + age, 0) / ExcludeDogsAge.length;
+
+
+// // ====================== PEŁNY KOD Z WYJAŚNIENIAMI =====================
+
+// const DogsAge = [5, 2, 4, 1, 15, 8, 3];
+
+// const calcAverageHumanAge = function(DogsAge) {
+//   const humanAge = DogsAge.map(age => {
+//     if (age > 2) {
+//       return 16 + age * 4;
+//     } else {
+//       return age * 2;
+//     }
+//   });
+
+//   const ExcludeDogsAge = humanAge.filter(age => age >= 18);
+
+//   const AverageDogs = ExcludeDogsAge.reduce((acc, age) => acc + age, 0) / ExcludeDogsAge.length;
+
+//   return AverageDogs;
+// }
+
+// console.log(calcAverageHumanAge(DogsAge));
+
+
+// /*
+// PODSUMOWANIE:
+// - map:      zmienia tablicę wieków psów na wiek ludzki
+// - filter:   wybiera tylko wieki >= 18
+// - reduce:   oblicza średnią z wybranych wieków
+// */
